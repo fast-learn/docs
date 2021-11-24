@@ -11,7 +11,7 @@ mkdir project
 2. 执行安装命令：执行脚手架命令安装模版
 
 ```bash
-fast-leran init
+fast-learn init
 ```
 
 3. 选择模版类型：选择安装模版的类型为组件
