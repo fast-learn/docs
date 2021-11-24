@@ -34,7 +34,7 @@ module.exports = {
           ]
         },
         {
-          title: '准备阶段',
+          title: '开发',
           collapsable: false,
           children: [
             'init/web',
@@ -44,14 +44,14 @@ module.exports = {
           ]
         },
         {
-          title: '联调阶段',
+          title: '联调',
           collapsable: false,
           children: [
             'joint/service'
           ]
         },
         {
-          title: '发布阶段',
+          title: '发布',
           collapsable: false,
           children: [
             'release/init',
@@ -59,7 +59,7 @@ module.exports = {
           ]
         },
         {
-          title: '模块集合',
+          title: '预习资料',
           collapsable: false,
           children: [
             'packageAggregate/web',
