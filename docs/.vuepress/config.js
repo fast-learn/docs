@@ -1,6 +1,7 @@
 module.exports = {
   title: '管理后台文档',
   description : '【毕设】管理后台课程配套文档',
+  base: '/docs/',
   markdown: {
     // markdown-it-anchor 的选项
     anchor: { permalink: false },
