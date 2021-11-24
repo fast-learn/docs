@@ -1,4 +1,5 @@
 # fast-learn
+> 源码地址：[https://github.com/fast-learn/cli](https://github.com/fast-learn/cli)
 
 ## fast-learn 使用流程
 
