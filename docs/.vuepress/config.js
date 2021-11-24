@@ -37,6 +37,7 @@ module.exports = {
           title: '开发',
           collapsable: false,
           children: [
+            'init/fast-learn',
             'init/web',
             'init/service',
             'init/guide',
