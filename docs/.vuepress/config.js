@@ -19,7 +19,7 @@ module.exports = {
   themeConfig : {
     nav : [
       { text: '首页', link: '/' },
-      { text: '毕设系列', link: '/guide/' },
+      { text: '管理后台入门', link: '/guide/' },
       { text: '学习课程', link: 'https://ke.qq.com/course/4122203' }
     ],
     navbar: true,
