@@ -37,7 +37,7 @@ npm install fast-learn -g
 fast-learn init
 ```
 
-## fast-laern 使用流程
+## fast-learn 使用流程
 
 1. 创建项目：创建存放项目模版的文件夹
 

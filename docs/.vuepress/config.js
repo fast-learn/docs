@@ -18,8 +18,8 @@ module.exports = {
   themeConfig : {
     nav : [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      { text: '学习课程', link: '' }
+      { text: '毕设系列', link: '/guide/' },
+      { text: '学习课程', link: 'https://ke.qq.com/course/4122203' }
     ],
     navbar: true,
     sidebar: {
@@ -54,7 +54,7 @@ module.exports = {
           collapsable: false,
           children: [
             'release/init',
-            'release/perfect'
+            'release/complete'
           ]
         },
         {
