@@ -19,7 +19,8 @@ module.exports = {
   themeConfig : {
     nav : [
       { text: '首页', link: '/' },
-      { text: '管理后台入门', link: '/guide/' },
+      { text: '管理后台入门', link: '/learn/' },
+      // { text: '管理后台入门', link: '/guide/' },
       { text: '学习课程', link: 'https://ke.qq.com/course/4122203' }
     ],
     navbar: true,
@@ -67,6 +68,34 @@ module.exports = {
             'packageAggregate/service'
           ]
         }
+      ],
+      '/learn/':[
+        {
+          title: '操作流程',
+          collapsable: false,
+          children: [
+            '',
+            '/learn/commissioning.md'
+          ]
+        },
+        {
+          title: '权限管理',
+          collapsable: false,
+          children: [
+            'advanced/service',
+            'advanced/web'
+          ]
+        },
+        {
+          title: 'API文档',
+          collapsable: false,
+          children: [
+            '/learn/API.md',
+            '/learn/user.md',
+            '/learn/role.md',
+            '/learn/menu.md'
+          ]
+        },
       ]
     }
   }
