@@ -273,7 +273,7 @@ service.interceptors.request.use(
 );
 ```
 
-2.. 添加 info 请求：修改 app/router 中添加 user/info 请求的 token 认证
+2. 添加 info 请求：修改 app/router 中添加 user/info 请求的 token 认证
 
 ```js
 router.get('/user/info', app.jwt, controller.user.getUserInfo)
