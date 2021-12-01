@@ -21,11 +21,9 @@ export function login(data) {
 ```js
 service.interceptors.request.use(
   (config) => {
+    // 这里是为了和原有的项目接口进行区分，防止破坏原有项目页面的数据，后面在添加权限时也可以在这里进行配置。
     if (config.url === "/user/login" || config.url === "/user/info") {
       config.baseURL = "http://localhost:7001/";
-    }
-    if (store.getters.token) {
-      config.headers["X-Token"] = getToken();
     }
     return config;
   },
@@ -254,15 +252,41 @@ async login {
 ```
 
 ###  user/info 接口 token 获取
-> 前端在 axios 的请求拦截中将请求头修改成 config.headers['authorization'] = `Bearer ${getToken()}`，jwt 默认验证请求头中的 authorization 信息
+1. 前端在 axios 的请求拦截中将请求头修改成 config.headers['authorization'] = `Bearer ${getToken()}`，jwt 默认验证请求头中的 authorization 信息
+```js
+service.interceptors.request.use(
+  (config) => {
+    // 这里是为了和原有的项目接口进行区分，防止破坏原有项目页面的数据，后面在添加权限时也可以在这里进行配置。
+    if (config.url === "/user/login" || config.url === "/user/info") {
+      config.baseURL = "http://localhost:7001/";
+    }
+    if (store.getters.token) {
+      // token 认证
+      config.headers["X-Token"] = getToken();
+    }
+    return config;
+  },
+  (error) => {
+    console.log(error); // for debug
+    return Promise.reject(error);
+  }
+);
+```
 
-1. 添加 info 请求：修改 app/router 中添加 user/info 请求的 token 认证
+2.. 添加 info 请求：修改 app/router 中添加 user/info 请求的 token 认证
 
 ```js
 router.get('/user/info', app.jwt, controller.user.getUserInfo)
 ```
+3. 添加 token 解密函数
+```js
+// app/utils/token 
+function parseToken(token, key = PRIVATE_KEY) {
+  return jwt.verify(token, key);
+}
 
-2. 配置接口响应：在 app/controller/user 中添加 getInfo 函数，解析请求头中的 token 信息获取用户信息。
+```
+4. 配置接口响应：在 app/controller/user 中添加 getInfo 函数，解析请求头中的 token 信息获取用户信息。
 
 ```js
 const { parseToken } = require('../utils/token')
